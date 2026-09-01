@@ -15,5 +15,14 @@ On Client Machine -------
         1. telnet <Host Machine IP> 11434 ---should be working 
         2. And call that model using REST API calls. Example below:
 
+                response = requests.post(
+                         "http://YOUR_SERVER_IP:11434/api/generate",
+                          json={
+                                "model": "llama3.1",
+                                "prompt": "Hello"
+                               }
+                             )
+
+
                           
         
