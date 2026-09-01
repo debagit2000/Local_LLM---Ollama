@@ -1,0 +1,19 @@
+On Host Machine -----
+
+        1. Install Ollama 
+        2. Pull required model 
+        3. Check status of the Ollama service 
+        4. vi /etc/systemd/system/ollama.server
+        5. ADD: Environment="OLLAMA_HOST=0.0.0.0:11434" below [service] header 
+        5. systemctl daemon-reload 
+        6. systemctl restart ollama
+        7. ss -tulnp | grep 11434  - Should be *:11434 ----- means it not working on only local host.
+        8. Mode required changes in security group OR NLA to access. 
+
+On Client Machine -------
+
+        1. telnet <Host Machine IP> 11434 ---should be working 
+        2. And call that model using REST API calls. Example below:
+
+                          
+        
